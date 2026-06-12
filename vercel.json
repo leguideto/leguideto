@@ -16,6 +16,14 @@
       "dest": "/public/js/$1"
     },
     {
+      "src": "/images/(.*)",
+      "dest": "/public/images/$1"
+    },
+    {
+      "src": "/data/(.*)",
+      "dest": "/public/data/$1"
+    },
+    {
       "src": "/(.*)",
       "dest": "/server.js"
     }
