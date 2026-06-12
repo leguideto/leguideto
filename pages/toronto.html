@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>leGuideTO — Comprendre Toronto</title>
+  <meta name="description" data-fr="Comprendre Toronto : la ville, le Grand Toronto, l'amalgamation de 1998 et la carte des quartiers." data-en="Understanding Toronto: the city, the GTA, the 1998 amalgamation and the neighbourhood map." content="Comprendre Toronto et ses quartiers." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet" />
+  <!-- Leaflet (free, open-source map library) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body data-hero="photo-1517935706615-2717063c2225" data-hero-crop="top" data-hero-alt="Toronto vue aérienne des quartiers / Toronto neighbourhoods aerial">
+
+  <div id="site-header"></div>
+
+  <section class="page-head">
+    <div class="container">
+      <span class="eyebrow" data-fr="La ville, démystifiée" data-en="The city, demystified">La ville, démystifiée</span>
+      <h1 data-fr="Comprendre Toronto" data-en="Understanding Toronto">Comprendre Toronto</h1>
+      <p data-fr="Quand on arrive à Toronto, une des premières confusions c'est de savoir ce qu'est vraiment Toronto. Est-ce que Mississauga c'est Toronto ? Et Etobicoke ? Et Scarborough ? Voici les réponses claires." data-en="When you arrive in Toronto, one of the first confusions is understanding what Toronto actually is. Is Mississauga Toronto? What about Etobicoke? Scarborough? Here are clear answers.">Quand on arrive à Toronto, une des premières confusions c'est de savoir ce qu'est vraiment Toronto. Est-ce que Mississauga c'est Toronto ? Et Etobicoke ? Et Scarborough ? Voici les réponses claires.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 1 — Toronto vs GTA -->
+  <section class="section">
+    <div class="container prose">
+      <h2 data-fr="Toronto vs le Grand Toronto — la confusion la plus fréquente" data-en="Toronto vs the GTA — the most common confusion">Toronto vs le Grand Toronto — la confusion la plus fréquente</h2>
+      <p data-fr="La <strong>Ville de Toronto</strong> est une municipalité précise, avec des frontières officielles. Le <strong>Grand Toronto (GTA)</strong> est une région beaucoup plus large qui regroupe plusieurs villes voisines — qui ne sont PAS Toronto." data-en="The <strong>City of Toronto</strong> is a specific municipality with official boundaries. The <strong>Greater Toronto Area (GTA)</strong> is a much larger region grouping several neighbouring cities — which are NOT Toronto.">La <strong>Ville de Toronto</strong> est une municipalité précise, avec des frontières officielles. Le <strong>Grand Toronto (GTA)</strong> est une région beaucoup plus large qui regroupe plusieurs villes voisines — qui ne sont PAS Toronto.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th data-fr="Dans la Ville de Toronto ✅" data-en="In the City of Toronto ✅">Dans la Ville de Toronto ✅</th>
+              <th data-fr="Dans le GTA mais PAS Toronto ❌" data-en="In the GTA but NOT Toronto ❌">Dans le GTA mais PAS Toronto ❌</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Downtown</td><td>Mississauga</td></tr>
+            <tr><td>North York</td><td>Brampton</td></tr>
+            <tr><td>Scarborough</td><td>Markham</td></tr>
+            <tr><td>Etobicoke</td><td>Vaughan</td></tr>
+            <tr><td>East York</td><td>Oakville</td></tr>
+            <tr><td>York</td><td>Richmond Hill</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tip warn">
+        <p data-fr="⚠️ Quand quelqu'un dit « je vis à Toronto » en parlant de Mississauga — c'est une erreur fréquente. Ce sont deux villes différentes, avec deux administrations différentes." data-en="⚠️ When someone says “I live in Toronto” but means Mississauga — that's a common mistake. They are two different cities, with two different administrations.">⚠️ Quand quelqu'un dit « je vis à Toronto » en parlant de Mississauga — c'est une erreur fréquente. Ce sont deux villes différentes, avec deux administrations différentes.</p>
+      </div>
+      <p><a href="https://www.toronto.ca" target="_blank" rel="noopener" data-fr="Site officiel de la Ville de Toronto" data-en="Official City of Toronto website">Site officiel de la Ville de Toronto</a></p>
+    </div>
+  </section>
+
+  <!-- SECTION 2 — Amalgamation -->
+  <section class="section gray-bg">
+    <div class="container prose">
+      <h2 data-fr="Pourquoi Etobicoke et Scarborough semblent des villes — l'amalgamation de 1998" data-en="Why Etobicoke and Scarborough feel like cities — the 1998 amalgamation">Pourquoi Etobicoke et Scarborough semblent des villes — l'amalgamation de 1998</h2>
+      <p data-fr="Avant 1998, Toronto était composée de 6 municipalités séparées :" data-en="Before 1998, Toronto was made up of 6 separate municipalities:">Avant 1998, Toronto était composée de 6 municipalités séparées :</p>
+      <ul>
+        <li data-fr="🏙️ <strong>Old Toronto</strong> — le centre historique, ce qu'on appelle « downtown »." data-en="🏙️ <strong>Old Toronto</strong> — the historic core, what people call “downtown.”">🏙️ <strong>Old Toronto</strong> — le centre historique, ce qu'on appelle « downtown ».</li>
+        <li data-fr="🌳 <strong>North York</strong> — au nord, plus suburbain." data-en="🌳 <strong>North York</strong> — to the north, more suburban.">🌳 <strong>North York</strong> — au nord, plus suburbain.</li>
+        <li data-fr="🌊 <strong>Scarborough</strong> — à l'est, très multiculturel." data-en="🌊 <strong>Scarborough</strong> — to the east, very multicultural.">🌊 <strong>Scarborough</strong> — à l'est, très multiculturel.</li>
+        <li data-fr="🏘️ <strong>Etobicoke</strong> — à l'ouest, près du lac Ontario." data-en="🏘️ <strong>Etobicoke</strong> — to the west, near Lake Ontario.">🏘️ <strong>Etobicoke</strong> — à l'ouest, près du lac Ontario.</li>
+        <li data-fr="🏡 <strong>East York</strong> — entre downtown et Scarborough." data-en="🏡 <strong>East York</strong> — between downtown and Scarborough.">🏡 <strong>East York</strong> — entre downtown et Scarborough.</li>
+        <li data-fr="🌆 <strong>York</strong> — entre downtown et North York." data-en="🌆 <strong>York</strong> — between downtown and North York.">🌆 <strong>York</strong> — entre downtown et North York.</li>
+      </ul>
+      <p data-fr="En 1998, le gouvernement provincial a fusionné ces 6 villes en une seule : la Ville de Toronto. C'est pourquoi les gens disent encore « j'habite à Etobicoke » ou « je viens de North York » — ces noms existent toujours culturellement, même si, sur le plan administratif, ce sont des quartiers de Toronto." data-en="In 1998, the provincial government merged these 6 cities into one: the City of Toronto. That's why people still say “I live in Etobicoke” or “I'm from North York” — these names still exist culturally, even though administratively they are neighbourhoods of Toronto.">En 1998, le gouvernement provincial a fusionné ces 6 villes en une seule : la Ville de Toronto. C'est pourquoi les gens disent encore « j'habite à Etobicoke » ou « je viens de North York » — ces noms existent toujours culturellement, même si, sur le plan administratif, ce sont des quartiers de Toronto.</p>
+      <p><a href="https://www.toronto.ca/city-government/data-research-maps/neighbourhoods-communities/neighbourhood-profiles/about-toronto-neighbourhoods/" target="_blank" rel="noopener" data-fr="À propos des quartiers de Toronto" data-en="About Toronto neighbourhoods">À propos des quartiers de Toronto</a></p>
+    </div>
+  </section>
+
+  <!-- SECTION 3 — Interactive map -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title" data-fr="La carte des quartiers de Toronto" data-en="Toronto Neighbourhood Map">La carte des quartiers de Toronto</h2>
+      <p class="section-intro" data-fr="Clique sur un marqueur pour découvrir le caractère de chaque quartier. Filtre par secteur." data-en="Click a marker to discover the character of each neighbourhood. Filter by area.">Clique sur un marqueur pour découvrir le caractère de chaque quartier. Filtre par secteur.</p>
+
+      <div class="hood-filters">
+        <button class="hood-filter active" data-filter="all" data-fr="Tous" data-en="All">Tous</button>
+        <button class="hood-filter" data-filter="downtown" data-fr="Downtown" data-en="Downtown">Downtown</button>
+        <button class="hood-filter" data-filter="northyork" data-fr="North York" data-en="North York">North York</button>
+        <button class="hood-filter" data-filter="scarborough" data-fr="Scarborough" data-en="Scarborough">Scarborough</button>
+        <button class="hood-filter" data-filter="etobicoke" data-fr="Etobicoke" data-en="Etobicoke">Etobicoke</button>
+        <button class="hood-filter" data-filter="eastyork" data-fr="East York" data-en="East York">East York</button>
+        <button class="hood-filter" data-filter="york" data-fr="York" data-en="York">York</button>
+      </div>
+
+      <div id="hood-map" role="application" aria-label="Carte des quartiers de Toronto / Toronto neighbourhood map"></div>
+
+      <div class="district-legend">
+        <span><i style="background:#e8f4f8"></i>Downtown / Old Toronto</span>
+        <span><i style="background:#e8f8e8"></i>North York</span>
+        <span><i style="background:#fff3e8"></i>Scarborough</span>
+        <span><i style="background:#f3e8f8"></i>Etobicoke</span>
+        <span><i style="background:#f8f8e8"></i>East York</span>
+        <span><i style="background:#f8e8e8"></i>York</span>
+      </div>
+
+      <p class="disclaimer" data-fr="⚠️ Les frontières des quartiers peuvent varier selon les sources, et le regroupement par secteur est approximatif. Certains quartiers sont des désignations culturelles non officielles. Source : <a href='https://open.toronto.ca/dataset/neighbourhoods/' target='_blank' rel='noopener'>Ville de Toronto — Données ouvertes / City of Toronto Open Data</a>" data-en="⚠️ Neighbourhood boundaries may vary by source, and the grouping by district is approximate. Some neighbourhoods are unofficial cultural designations. Source: <a href='https://open.toronto.ca/dataset/neighbourhoods/' target='_blank' rel='noopener'>Ville de Toronto — Données ouvertes / City of Toronto Open Data</a>">⚠️ Les frontières des quartiers peuvent varier selon les sources, et le regroupement par secteur est approximatif. Certains quartiers sont des désignations culturelles non officielles. Source : <a href='https://open.toronto.ca/dataset/neighbourhoods/' target='_blank' rel='noopener'>Ville de Toronto — Données ouvertes / City of Toronto Open Data</a></p>
+    </div>
+  </section>
+
+  <!-- SECTION 4 — Choosing a neighbourhood -->
+  <section class="section gray-bg">
+    <div class="container prose">
+      <h2 data-fr="Comment choisir son quartier" data-en="How to choose your neighbourhood">Comment choisir son quartier</h2>
+
+      <h3 data-fr="👨‍👩‍👧 Famille avec enfants" data-en="👨‍👩‍👧 Families with children">👨‍👩‍👧 Famille avec enfants</h3>
+      <ul>
+        <li data-fr="Cherche d'abord l'école française la plus proche." data-en="First look for the nearest French school.">Cherche d'abord l'école française la plus proche.</li>
+        <li data-fr="Conseil scolaire <a href='https://www.viamonde.ca' target='_blank' rel='noopener'>Viamonde</a> (laïc) et conseil catholique <a href='https://www.monavenir.ca' target='_blank' rel='noopener'>MonAvenir</a>." data-en="<a href='https://www.viamonde.ca' target='_blank' rel='noopener'>Viamonde</a> (secular) and <a href='https://www.monavenir.ca' target='_blank' rel='noopener'>MonAvenir</a> (Catholic) school boards.">Conseil scolaire <a href='https://www.viamonde.ca' target='_blank' rel='noopener'>Viamonde</a> (laïc) et conseil catholique <a href='https://www.monavenir.ca' target='_blank' rel='noopener'>MonAvenir</a>.</li>
+        <li data-fr="Les secteurs avec écoles françaises sont souvent : North York, Etobicoke, East York." data-en="Areas with French schools are often: North York, Etobicoke, East York.">Les secteurs avec écoles françaises sont souvent : North York, Etobicoke, East York.</li>
+      </ul>
+
+      <h3 data-fr="💰 Budget limité" data-en="💰 Limited budget">💰 Budget limité</h3>
+      <ul>
+        <li data-fr="Scarborough, North York (nord) et Etobicoke (nord) ont des loyers moins chers." data-en="Scarborough, north North York and north Etobicoke have cheaper rents.">Scarborough, North York (nord) et Etobicoke (nord) ont des loyers moins chers.</li>
+        <li data-fr="Plus loin du centre-ville = plus abordable. Vérifie la connexion TTC." data-en="Farther from downtown = more affordable. Check the TTC connection.">Plus loin du centre-ville = plus abordable. Vérifie la connexion TTC.</li>
+        <li data-fr="Compare les loyers sur notre page <a href='/budget'>Budget</a> et <a href='/housing'>Logement</a>." data-en="Compare rents on our <a href='/budget'>Budget</a> and <a href='/housing'>Housing</a> pages.">Compare les loyers sur notre page <a href='/budget'>Budget</a> et <a href='/housing'>Logement</a>.</li>
+      </ul>
+
+      <h3 data-fr="🤝 Accès aux services francophones" data-en="🤝 Access to French services">🤝 Accès aux services francophones</h3>
+      <ul>
+        <li data-fr="Le centre-ville et North York comptent le plus d'organismes francophones." data-en="Downtown and North York have the most francophone organizations.">Le centre-ville et North York comptent le plus d'organismes francophones.</li>
+        <li data-fr="Vois tous les organismes dans l'<a href='/directory'>annuaire francophone</a>." data-en="See all the organizations in the <a href='/directory'>francophone directory</a>.">Vois tous les organismes dans l'<a href='/directory'>annuaire francophone</a>.</li>
+      </ul>
+
+      <h3 data-fr="🚇 Accès au transport" data-en="🚇 Transit access">🚇 Accès au transport</h3>
+      <ul>
+        <li data-fr="Près d'une station de métro = beaucoup plus pratique au quotidien." data-en="Near a subway station = much more convenient day to day.">Près d'une station de métro = beaucoup plus pratique au quotidien.</li>
+        <li data-fr="Consulte le <a href='https://www.ttc.ca/routes-and-schedules' target='_blank' rel='noopener'>réseau TTC</a>." data-en="Check the <a href='https://www.ttc.ca/routes-and-schedules' target='_blank' rel='noopener'>TTC network</a>.">Consulte le <a href='https://www.ttc.ca/routes-and-schedules' target='_blank' rel='noopener'>réseau TTC</a>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SECTION 5 — Official resources -->
+  <section class="section">
+    <div class="container prose">
+      <h2 data-fr="Ressources officielles" data-en="Official resources">Ressources officielles</h2>
+      <ul class="dir-list">
+        <li><a href="https://www.toronto.ca/city-government/data-research-maps/neighbourhoods-communities/neighbourhood-profiles/" target="_blank" rel="noopener">Ville de Toronto — Profils de quartiers</a></li>
+        <li><a href="https://www.toronto.ca/city-government/data-research-maps/neighbourhoods-communities/neighbourhood-profiles/about-toronto-neighbourhoods/" target="_blank" rel="noopener" data-fr="À propos des quartiers de Toronto" data-en="About Toronto neighbourhoods">À propos des quartiers de Toronto</a></li>
+        <li><a href="https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/index.cfm?Lang=F" target="_blank" rel="noopener" data-fr="Données démographiques — Statistique Canada" data-en="Demographic data — Statistics Canada">Données démographiques — Statistique Canada</a></li>
+        <li><a href="https://www.ttc.ca/routes-and-schedules" target="_blank" rel="noopener" data-fr="Réseau TTC" data-en="TTC network">Réseau TTC</a></li>
+      </ul>
+      <p class="disclaimer" data-fr="⚠️ Cette liste n'est pas exhaustive. D'autres options existent — nous vous encourageons à faire vos propres recherches." data-en="⚠️ This list is not exhaustive. Other options exist — we encourage you to do your own research.">⚠️ Cette liste n'est pas exhaustive. D'autres options existent — nous vous encourageons à faire vos propres recherches.</p>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <!-- Leaflet JS must load before main.js so initHoodMap() can use L -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

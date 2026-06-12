@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>leGuideTO — Carte des services francophones</title>
+  <meta name="description" data-fr="La carte interactive des organismes francophones du Grand Toronto." data-en="The interactive map of francophone organizations in the GTA." content="Carte des services francophones de Toronto." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet" />
+  <!-- Leaflet (free, open-source map library) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body data-hero="photo-1603466182447-ba20e1d9ff20" data-hero-alt="Toronto vue de la ville / Toronto city view">
+
+  <div id="site-header"></div>
+
+  <section class="page-head">
+    <div class="container">
+      <span class="eyebrow" data-fr="Sur le terrain" data-en="On the ground">Sur le terrain</span>
+      <h1 data-fr="La carte des services francophones" data-en="The francophone services map">La carte des services francophones</h1>
+      <p data-fr="Repère les organismes francophones du Grand Toronto. Clique sur un marqueur pour voir l'adresse, le téléphone et le site web. Filtre par type de service." data-en="Find the GTA's francophone organizations. Click a marker to see the address, phone and website. Filter by service type.">Repère les organismes francophones du Grand Toronto. Clique sur un marqueur pour voir l'adresse, le téléphone et le site web. Filtre par type de service.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="filters">
+        <button class="filter-btn map-filter active" data-filter="all" data-fr="Tout" data-en="All">Tout</button>
+        <button class="filter-btn map-filter" data-filter="settlement" data-fr="Installation" data-en="Settlement">Installation</button>
+        <button class="filter-btn map-filter" data-filter="employment" data-fr="Emploi" data-en="Employment">Emploi</button>
+        <button class="filter-btn map-filter" data-filter="health" data-fr="Santé" data-en="Health">Santé</button>
+        <button class="filter-btn map-filter" data-filter="education" data-fr="Éducation" data-en="Education">Éducation</button>
+        <button class="filter-btn map-filter" data-filter="culture" data-fr="Culture" data-en="Culture">Culture</button>
+      </div>
+
+      <div id="map" role="application" aria-label="Map of francophone services in the GTA"></div>
+
+      <div class="tip" style="margin-top:24px">
+        <h4 data-fr="💡 Astuce" data-en="💡 Tip">💡 Astuce</h4>
+        <p data-fr="Les emplacements sont approximatifs : confirme toujours l'adresse exacte et les heures d'ouverture sur le site de l'organisme avant de te déplacer. Besoin de plus de détails ? Va voir l'annuaire." data-en="Locations are approximate: always confirm the exact address and opening hours on the organization's website before heading over. Need more detail? Check the directory.">Les emplacements sont approximatifs : confirme toujours l'adresse exacte et les heures d'ouverture sur le site de l'organisme avant de te déplacer. Besoin de plus de détails ? Va voir l'<a href="/directory">annuaire</a>.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <!-- Leaflet JS must load before main.js so initMap() can use L -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>leGuideTO — Combien ça coûte de vivre à Toronto ?</title>
+  <meta name="description" data-fr="Estime ton coût de vie mensuel à Toronto à partir de données officielles." data-en="Estimate your monthly cost of living in Toronto from official data." content="Calculateur du coût de la vie à Toronto." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body data-hero="photo-1678501290866-e22dd8caa94a" data-hero-alt="Marché et épicerie à Toronto / Toronto grocery market">
+
+  <div id="site-header"></div>
+
+  <section class="page-head">
+    <div class="container">
+      <span class="eyebrow" data-fr="Planifie sans surprise" data-en="Plan with no surprises">Planifie sans surprise</span>
+      <h1 data-fr="Combien ça coûte de vivre à Toronto ?" data-en="How much does it cost to live in Toronto?">Combien ça coûte de vivre à Toronto ?</h1>
+      <p data-fr="Choisis ta situation et obtiens une estimation de tes dépenses mensuelles, basée sur des données officielles." data-en="Pick your situation and get an estimate of your monthly expenses, based on official data.">Choisis ta situation et obtiens une estimation de tes dépenses mensuelles, basée sur des données officielles.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- STEP 1 — selections -->
+      <div class="calc-card">
+        <h3 data-fr="1. Ta situation" data-en="1. Your situation">1. Ta situation</h3>
+        <form id="calc-form" class="calc-grid">
+          <div class="calc-field">
+            <label for="calc-household" data-fr="Taille du ménage" data-en="Household size">Taille du ménage</label>
+            <select id="calc-household">
+              <option value="p1" data-fr="1 personne" data-en="1 person">1 personne</option>
+              <option value="p2" selected data-fr="2 personnes" data-en="2 people">2 personnes</option>
+              <option value="f3" data-fr="Famille 3" data-en="Family of 3">Famille 3</option>
+              <option value="f4" data-fr="Famille 4+" data-en="Family of 4+">Famille 4+</option>
+            </select>
+          </div>
+
+          <div class="calc-field">
+            <label for="calc-hood" data-fr="Quartier" data-en="Neighbourhood">Quartier</label>
+            <select id="calc-hood">
+              <option value="downtown" data-fr="Downtown Core" data-en="Downtown Core">Downtown Core</option>
+              <option value="northyork" selected>North York</option>
+              <option value="scarborough">Scarborough</option>
+              <option value="etobicoke">Etobicoke</option>
+              <option value="eastyork">East York</option>
+              <option value="york">York</option>
+            </select>
+          </div>
+
+          <div class="calc-field">
+            <label for="calc-housing" data-fr="Logement" data-en="Housing">Logement</label>
+            <select id="calc-housing">
+              <option value="room" data-fr="Chambre partagée" data-en="Shared room">Chambre partagée</option>
+              <option value="basement" data-fr="Sous-sol" data-en="Basement">Sous-sol</option>
+              <option value="br1" selected data-fr="1 chambre" data-en="1-bedroom">1 chambre</option>
+              <option value="br2" data-fr="2 chambres" data-en="2-bedroom">2 chambres</option>
+              <option value="br3" data-fr="3 chambres" data-en="3-bedroom">3 chambres</option>
+              <option value="br4" data-fr="4 chambres et plus" data-en="4-bedroom and up">4 chambres et plus</option>
+            </select>
+          </div>
+
+          <div class="calc-field">
+            <label for="calc-transport" data-fr="Transport" data-en="Transport">Transport</label>
+            <select id="calc-transport">
+              <option value="ttc" selected data-fr="TTC ($156/mois)" data-en="TTC ($156/mo)">TTC ($156/mois)</option>
+              <option value="car" data-fr="Voiture (~$800/mois)" data-en="Car (~$800/mo)">Voiture (~$800/mois)</option>
+              <option value="both" data-fr="Les deux" data-en="Both">Les deux</option>
+              <option value="custom" data-fr="Personnalisé" data-en="Custom">Personnalisé</option>
+            </select>
+            <input type="number" id="calc-transport-custom" class="calc-custom hidden" min="0" step="10" data-fr="Entrez votre montant" data-en="Enter your amount" placeholder="Entrez votre montant" />
+          </div>
+
+          <div class="calc-field">
+            <label for="calc-groceries" data-fr="Épicerie" data-en="Groceries">Épicerie</label>
+            <select id="calc-groceries">
+              <option value="budget" data-fr="Budget (~$400)" data-en="Budget (~$400)">Budget (~$400)</option>
+              <option value="mid" selected data-fr="Moyen (~$722)" data-en="Average (~$722)">Moyen (~$722)</option>
+              <option value="premium" data-fr="Premium (~$1,000)" data-en="Premium (~$1,000)">Premium (~$1,000)</option>
+              <option value="custom" data-fr="Personnalisé" data-en="Custom">Personnalisé</option>
+            </select>
+            <input type="number" id="calc-groceries-custom" class="calc-custom hidden" min="0" step="10" data-fr="Entrez votre montant" data-en="Enter your amount" placeholder="Entrez votre montant" />
+          </div>
+
+          <div class="calc-field">
+            <label for="calc-childcare" data-fr="Garderie" data-en="Childcare">Garderie</label>
+            <select id="calc-childcare">
+              <option value="no" selected data-fr="Non" data-en="No">Non</option>
+              <option value="yes" data-fr="Oui (~$440/mois)" data-en="Yes (~$440/mo)">Oui (~$440/mois)</option>
+              <option value="custom" data-fr="Personnalisé" data-en="Custom">Personnalisé</option>
+            </select>
+            <input type="number" id="calc-childcare-custom" class="calc-custom hidden" min="0" step="10" data-fr="Entrez votre montant" data-en="Enter your amount" placeholder="Entrez votre montant" />
+          </div>
+
+          <div class="calc-field">
+            <label for="calc-hydro" data-fr="💡 Hydro / Électricité ($)" data-en="💡 Hydro / Electricity ($)">💡 Hydro / Électricité ($)</label>
+            <input type="number" id="calc-hydro" min="0" step="5" value="145" data-fr="Entrez votre montant" data-en="Enter your amount" placeholder="Entrez votre montant" />
+          </div>
+
+          <div class="calc-field">
+            <label for="calc-phone" data-fr="📱 Téléphone ($)" data-en="📱 Phone ($)">📱 Téléphone ($)</label>
+            <input type="number" id="calc-phone" min="0" step="5" value="55" data-fr="Entrez votre montant" data-en="Enter your amount" placeholder="Entrez votre montant" />
+          </div>
+
+          <div class="calc-field">
+            <label for="calc-internet" data-fr="🌐 Internet ($)" data-en="🌐 Internet ($)">🌐 Internet ($)</label>
+            <input type="number" id="calc-internet" min="0" step="5" value="60" data-fr="Entrez votre montant" data-en="Enter your amount" placeholder="Entrez votre montant" />
+          </div>
+        </form>
+        <p class="muted" style="font-size:0.85rem;margin-top:14px" data-fr="L'épicerie est ajustée selon la taille du ménage (base : 2 personnes)." data-en="Groceries are adjusted to household size (baseline: 2 people).">L'épicerie est ajustée selon la taille du ménage (base : 2 personnes).</p>
+      </div>
+
+      <!-- STEP 2 — results -->
+      <h3 style="font-size:1.3rem;margin-bottom:14px" data-fr="2. Ton estimation mensuelle" data-en="2. Your monthly estimate">2. Ton estimation mensuelle</h3>
+      <div class="calc-results-wrap">
+        <table class="calc-table">
+          <thead>
+            <tr>
+              <th data-fr="Catégorie" data-en="Category">Catégorie</th>
+              <th style="text-align:right" data-fr="Estimation" data-en="Estimate">Estimation</th>
+              <th data-fr="Source" data-en="Source">Source</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-fr="🏠 Loyer" data-en="🏠 Rent">🏠 Loyer</td>
+              <td class="amt" id="val-rent">$0</td>
+              <td><a class="src-link" href="https://trreb.ca/wp-content/files/market-stats/rental-reports/rental_report_Q1-2026.pdf" target="_blank" rel="noopener">TRREB T1 2026</a></td>
+            </tr>
+            <tr>
+              <td data-fr="🛒 Épicerie" data-en="🛒 Groceries">🛒 Épicerie</td>
+              <td class="amt" id="val-groceries">$0</td>
+              <td><a class="src-link" href="https://www.statcan.gc.ca/o1/en/plus/8347-breakdown-average-canadian-grocery-bill-and-what-might-be-cart-part-1" target="_blank" rel="noopener">Statistique Canada SHS 2023</a></td>
+            </tr>
+            <tr>
+              <td data-fr="🚌 Transport" data-en="🚌 Transport">🚌 Transport</td>
+              <td class="amt" id="val-transport">$0</td>
+              <td><a class="src-link" href="https://www.ttc.ca/Fares-and-passes" target="_blank" rel="noopener">TTC 2026</a></td>
+            </tr>
+            <tr>
+              <td data-fr="💡 Hydro / Électricité" data-en="💡 Hydro / Electricity">💡 Hydro / Électricité</td>
+              <td class="amt" id="val-hydro">$0</td>
+              <td><a class="src-link" href="https://www.oeb.ca" target="_blank" rel="noopener">Ontario Energy Board</a></td>
+            </tr>
+            <tr>
+              <td data-fr="📱 Téléphone" data-en="📱 Phone">📱 Téléphone</td>
+              <td class="amt" id="val-phone">$0</td>
+              <td><span class="src-link" data-fr="Moyenne du marché" data-en="Market average">Moyenne du marché</span></td>
+            </tr>
+            <tr>
+              <td data-fr="🌐 Internet" data-en="🌐 Internet">🌐 Internet</td>
+              <td class="amt" id="val-internet">$0</td>
+              <td><span class="src-link" data-fr="Moyenne du marché" data-en="Market average">Moyenne du marché</span></td>
+            </tr>
+            <tr id="row-childcare">
+              <td data-fr="👶 Garderie" data-en="👶 Childcare">👶 Garderie</td>
+              <td class="amt" id="val-childcare">$0</td>
+              <td><a class="src-link" href="https://www.ontario.ca/page/ontarios-early-years-and-child-care-annual-report-2025" target="_blank" rel="noopener">Ontario CWELCC 2026</a></td>
+            </tr>
+            <tr class="total-row">
+              <td data-fr="💰 TOTAL ESTIMÉ" data-en="💰 ESTIMATED TOTAL">💰 TOTAL ESTIMÉ</td>
+              <td class="amt" id="val-total">$0</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- STEP 3 — saving tips -->
+      <div class="tip" style="margin-top:40px">
+        <h4 data-fr="💡 Quelques pistes pour réduire tes dépenses" data-en="💡 Tips to reduce your expenses">💡 Quelques pistes pour réduire tes dépenses</h4>
+        <ul style="margin:8px 0 0 20px">
+          <li data-fr="Comparez les forfaits mobiles avant de vous engager — les offres varient selon les fournisseurs et les périodes." data-en="Compare phone plans before committing — offers vary by provider and time of year.">Comparez les forfaits mobiles avant de vous engager — les offres varient selon les fournisseurs et les périodes.</li>
+          <li data-fr="Si une offre ailleurs vous intéresse, contactez votre fournisseur actuel — il peut s'aligner." data-en="If an offer elsewhere appeals to you, contact your current provider — they may match it.">Si une offre ailleurs vous intéresse, contactez votre fournisseur actuel — il peut s'aligner.</li>
+          <li data-fr="Des applications de réduction sur l'épicerie existent — renseignez-vous et comparez." data-en="Grocery discount apps exist — look into them and compare.">Des applications de réduction sur l'épicerie existent — renseignez-vous et comparez.</li>
+          <li data-fr="Certaines banques offrent des forfaits sans frais pour nouveaux arrivants — comparez avant d'ouvrir un compte." data-en="Some banks offer no-fee newcomer packages — compare before opening an account.">Certaines banques offrent des forfaits sans frais pour nouveaux arrivants — comparez avant d'ouvrir un compte.</li>
+          <li data-fr="La bibliothèque publique de Toronto offre des ressources gratuites qui peuvent réduire certaines dépenses." data-en="The Toronto Public Library offers free resources that can cut some expenses.">La bibliothèque publique de Toronto offre des ressources gratuites qui peuvent réduire certaines dépenses.</li>
+        </ul>
+        <p style="margin-top:14px"><a href="/money" data-fr="Voir toutes nos ressources d'économie →" data-en="See all our saving resources →">Voir toutes nos ressources d'économie →</a></p>
+      </div>
+
+      <p class="disclaimer" data-fr="⚠️ Ces estimations sont basées sur des données officielles et des moyennes du marché. Les coûts réels varient selon le mode de vie et les choix personnels. Sources : TRREB, Statistique Canada, TTC, Ontario Energy Board, Ontario CWELCC." data-en="⚠️ These estimates are based on official data and market averages. Real costs vary by lifestyle and personal choices. Sources: TRREB, Statistics Canada, TTC, Ontario Energy Board, Ontario CWELCC.">⚠️ Ces estimations sont basées sur des données officielles et des moyennes du marché. Les coûts réels varient selon le mode de vie et les choix personnels. Sources : TRREB, Statistique Canada, TTC, Ontario Energy Board, Ontario CWELCC.</p>
+
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+  <script src="/js/main.js"></script>
+</body>
+</html>

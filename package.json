@@ -1,0 +1,25 @@
+{
+  "name": "leguideto",
+  "version": "2.0.0",
+  "description": "leGuideTO — a practical bilingual (FR/EN) settlement platform for French-speaking immigrants in the Greater Toronto Area.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "toronto",
+    "immigration",
+    "francophone",
+    "settlement",
+    "gta"
+  ],
+  "author": "leGuideTO",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npm start *)",
+      "Bash(curl -s -o /dev/null -w \"Home: %{http_code}\\\\n\" http://localhost:3000/)",
+      "Bash(kill %1)",
+      "Bash(pkill -f \"node server.js\")",
+      "Bash(node --check public/js/main.js)",
+      "Bash(node --check server.js)",
+      "Bash(curl -sI -m 10 \"https://source.unsplash.com/1200x600/?toronto\")",
+      "Bash(curl -sI -m 10 \"https://images.unsplash.com/photo-1517935706615-2717063c2225?w=1200&q=80\")",
+      "WebFetch(domain:unsplash.com)",
+      "Bash(curl -s -o /dev/null -m 5 -w \"%{http_code}\" http://localhost:3000/)",
+      "Bash(curl -s http://localhost:3000/)",
+      "Bash(curl -s http://localhost:3000/js/main.js)",
+      "Bash(curl -s http://localhost:3000/css/styles.css)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/toronto.html)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/css/styles.css)",
+      "Bash(awk '{o+=gsub\\(/{/,\"{\"\\); c+=gsub\\(/}/,\"}\"\\)} END{print \"open=\"o\" close=\"c}' /Users/kenzac/ici-toronto/public/css/styles.css)",
+      "Bash(curl -s http://localhost:3000/guide)",
+      "Bash(curl -s http://localhost:3000/budget)",
+      "Bash(curl -s http://localhost:3000/housing)",
+      "Bash(curl -s http://localhost:3000/health)",
+      "Bash(curl -s http://localhost:3000/directory)",
+      "Bash(node --check /Users/kenzac/ici-toronto/public/js/main.js)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/budget)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/toronto)",
+      "Bash(curl -s http://localhost:3000/toronto)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}  size=%{size_download}\\\\n\" -L \"https://opendata.toronto.ca/toronto.city/neighbourhoods/neighbourhoods.geojson\" --max-time 25)",
+      "Read(//private/tmp/**)",
+      "Bash(curl -s -L \"https://opendata.toronto.ca/toronto.city/neighbourhoods/neighbourhoods.geojson\" --max-time 25 -o to.geojson)",
+      "Bash(node -e ' *)",
+      "Bash(curl -s --max-time 30 \"https://ckan0.cf.opendata.inter.prod-toronto.ca/api/3/action/package_show?id=neighbourhoods\" -o pkg.json -w \"status=%{http_code}\\\\n\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}  type=%{content_type}\\\\n\" http://localhost:3000/data/neighbourhoods.geojson)",
+      "Bash(curl -s --max-time 15 \"https://opendata.toronto.ca/toronto.city/neighbourhoods/neighbourhoods.geojson\")",
+      "Bash(node -e 'const d=JSON.parse\\(require\\(\"fs\"\\).readFileSync\\(\"toronto-neighbourhoods.geojson\",\"utf8\"\\)\\);console.log\\(\"features:\",d.features.length,\"| sample:\",d.features[0].properties.AREA_NAME\\)')"
+    ]
+  }
+}
