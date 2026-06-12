@@ -6,6 +6,7 @@
       "use": "@vercel/node"
     }
   ],
+  "outputDirectory": "public",
   "routes": [
     {
       "src": "/css/(.*)",
