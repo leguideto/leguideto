@@ -241,8 +241,8 @@ img { max-width: 100%; }
   margin-bottom: 22px;
 }
 .hero h1 {
-  font-size: clamp(2.6rem, 8vw, 5.2rem);
-  max-width: 16ch;
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  max-width: 24ch;
   margin: 0 auto 22px;
   font-weight: 600;
 }
