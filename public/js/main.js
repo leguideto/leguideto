@@ -11,6 +11,10 @@
 
 (function () {
   'use strict';
+  var fa = document.createElement('link');
+  fa.rel = 'stylesheet';
+  fa.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css';
+  document.head.appendChild(fa);
 
   var STORAGE_KEY = 'leguideto-lang';
   var DEFAULT_LANG = 'fr';
@@ -181,7 +185,7 @@
       '<div class="footer-inner"><div class="container">' +
         '<div class="footer-grid">' +
           '<div>' +
-            '<div class="footer-brand"><span class="brand-le">leGuide</span><span class="brand-to">TO</span></div><div class="footer-social"><a href="https://www.instagram.com/leguideto/" target="_blank" rel="noopener" aria-label="Instagram">📸 Instagram</a></div>' +
+            '<div class="footer-brand"><span class="brand-le">leGuide</span><span class="brand-to">TO</span></div><div class="footer-social"><a href="https://www.instagram.com/leguideto/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i> Instagram</a></div>' +
             '<p data-fr="Le guide pratique des francophones qui s\'installent dans le Grand Toronto. Économisez du temps, de l\'argent et du stress." data-en="The practical guide for French-speakers settling in the Greater Toronto Area. Save time, money and stress.">Le guide pratique des francophones qui s\'installent dans le Grand Toronto.</p>' +
           '</div>' +
           '<div><h4 data-fr="Explorer" data-en="Explore">Explorer</h4>' + col(explore) + '</div>' +
