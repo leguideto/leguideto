@@ -181,7 +181,7 @@
       '<div class="footer-inner"><div class="container">' +
         '<div class="footer-grid">' +
           '<div>' +
-            '<div class="footer-brand"><span class="brand-le">leGuide</span><span class="brand-to">TO</span></div>' +
+            '<div class="footer-brand"><span class="brand-le">leGuide</span><span class="brand-to">TO</span></div><div class="footer-social"><a href="https://www.instagram.com/leguideto/" target="_blank" rel="noopener" aria-label="Instagram">📸 Instagram</a></div>' +
             '<p data-fr="Le guide pratique des francophones qui s\'installent dans le Grand Toronto. Économisez du temps, de l\'argent et du stress." data-en="The practical guide for French-speakers settling in the Greater Toronto Area. Save time, money and stress.">Le guide pratique des francophones qui s\'installent dans le Grand Toronto.</p>' +
           '</div>' +
           '<div><h4 data-fr="Explorer" data-en="Explore">Explorer</h4>' + col(explore) + '</div>' +
