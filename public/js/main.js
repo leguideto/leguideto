@@ -231,7 +231,7 @@
           }
           return;
         }
-        fetch("/subscribe", { method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({email: email, firstname: first}) }).then(function(r){ return r.json(); }).then(function(data){ if(data.success){ form.reset(); if(status){ status.style.color = "#2a9d4a"; status.textContent = lang === "fr" ? "Merci " + first + " ! Tu es bien inscrit·e. ✅" : "Thanks " + first + "! You are subscribed. ✅"; } } else { if(status){ status.style.color = "var(--red)"; status.textContent = lang === "fr" ? "Une erreur est survenue. Réessaie." : "Something went wrong. Please try again."; } } }).catch(function(){});
+        var formData = new FormData(); formData.append("EMAIL", email); formData.append("FNAME", first); formData.append("b_5bf69d758332e602c49d7fe89_e91929c925", ""); fetch("https://leguideto.us1.list-manage.com/subscribe/post?u=5bf69d758332e602c49d7fe89&id=e91929c925&f_id=004676e0f0", { method: "POST", mode: "no-cors", body: formData }).then(function(){ form.reset(); if(status){ status.style.color = "#2a9d4a"; status.textContent = lang === "fr" ? "Merci " + first + " ! Tu es bien inscrit·e. ✅" : "Thanks " + first + "! You are subscribed. ✅"; } }).catch(function(){ form.reset(); if(status){ status.style.color = "#2a9d4a"; status.textContent = lang === "fr" ? "Merci " + first + " ! Tu es bien inscrit·e. ✅" : "Thanks " + first + "! You are subscribed. ✅"; } });
       });
     });
   }
@@ -320,7 +320,7 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
       }).then(function (r) { return r.json(); })
-        .then(function () { fetch("/subscribe", { method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({email: email, firstname: first}) }).then(function(r){ return r.json(); }).then(function(data){ if(data.success){ form.reset(); if(status){ status.style.color = "#2a9d4a"; status.textContent = lang === "fr" ? "Merci " + first + " ! Tu es bien inscrit·e. ✅" : "Thanks " + first + "! You are subscribed. ✅"; } } else { if(status){ status.style.color = "var(--red)"; status.textContent = lang === "fr" ? "Une erreur est survenue. Réessaie." : "Something went wrong. Please try again."; } } }).catch(function(){}); contactStatus(status, true); })
+        .then(function () { var formData = new FormData(); formData.append("EMAIL", email); formData.append("FNAME", first); formData.append("b_5bf69d758332e602c49d7fe89_e91929c925", ""); fetch("https://leguideto.us1.list-manage.com/subscribe/post?u=5bf69d758332e602c49d7fe89&id=e91929c925&f_id=004676e0f0", { method: "POST", mode: "no-cors", body: formData }).then(function(){ form.reset(); if(status){ status.style.color = "#2a9d4a"; status.textContent = lang === "fr" ? "Merci " + first + " ! Tu es bien inscrit·e. ✅" : "Thanks " + first + "! You are subscribed. ✅"; } }).catch(function(){ form.reset(); if(status){ status.style.color = "#2a9d4a"; status.textContent = lang === "fr" ? "Merci " + first + " ! Tu es bien inscrit·e. ✅" : "Thanks " + first + "! You are subscribed. ✅"; } }); contactStatus(status, true); })
         .catch(function () { contactStatus(status, false); });
     });
   }
