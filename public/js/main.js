@@ -231,12 +231,7 @@
           }
           return;
         }
-        fetch("/subscribe", { method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({email: email, firstname: first}) }).catch(function(){}); form.reset();
-        if (status) {
-          status.style.color = '#2a9d4a';
-          status.textContent = lang === 'fr'
-            ? 'Merci ' + first + ' ! Tu es bien inscrit·e. ✅'
-            : 'Thanks ' + first + '! You\'re subscribed. ✅';
+        fetch("/subscribe", { method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({email: email, firstname: first}) }).then(function(r){ return r.json(); }).then(function(data){ if(data.success){ form.reset(); if(status){ status.style.color = "#2a9d4a"; status.textContent = lang === "fr" ? "Merci " + first + " ! Tu es bien inscrit·e. ✅" : "Thanks " + first + "! You are subscribed. ✅"; } } else { if(status){ status.style.color = "var(--red)"; status.textContent = lang === "fr" ? "Une erreur est survenue. Réessaie." : "Something went wrong. Please try again."; } } }).catch(function(){});
         }
       });
     });
@@ -326,7 +321,7 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
       }).then(function (r) { return r.json(); })
-        .then(function () { fetch("/subscribe", { method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({email: email, firstname: first}) }).catch(function(){}); form.reset(); contactStatus(status, true); })
+        .then(function () { fetch("/subscribe", { method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({email: email, firstname: first}) }).then(function(r){ return r.json(); }).then(function(data){ if(data.success){ form.reset(); if(status){ status.style.color = "#2a9d4a"; status.textContent = lang === "fr" ? "Merci " + first + " ! Tu es bien inscrit·e. ✅" : "Thanks " + first + "! You are subscribed. ✅"; } } else { if(status){ status.style.color = "var(--red)"; status.textContent = lang === "fr" ? "Une erreur est survenue. Réessaie." : "Something went wrong. Please try again."; } } }).catch(function(){}); contactStatus(status, true); })
         .catch(function () { contactStatus(status, false); });
     });
   }
