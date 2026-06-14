@@ -231,7 +231,7 @@
           }
           return;
         }
-        form.reset();
+        fetch("/subscribe", { method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({email: email, firstname: first}) }).catch(function(){}); form.reset();
         if (status) {
           status.style.color = '#2a9d4a';
           status.textContent = lang === 'fr'
@@ -326,7 +326,7 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
       }).then(function (r) { return r.json(); })
-        .then(function () { form.reset(); contactStatus(status, true); })
+        .then(function () { fetch("/subscribe", { method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({email: email, firstname: first}) }).catch(function(){}); form.reset(); contactStatus(status, true); })
         .catch(function () { contactStatus(status, false); });
     });
   }

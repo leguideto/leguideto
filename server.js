@@ -62,3 +62,37 @@ if (require.main === module) {
 }
 
 module.exports = app;
+
+// Mailchimp newsletter subscription
+app.post('/subscribe', async (req, res) => {
+  const { email, firstname } = req.body;
+  const API_KEY = process.env.MAILCHIMP_API_KEY;
+  const AUDIENCE_ID = process.env.MAILCHIMP_AUDIENCE_ID;
+  const DATACENTER = 'us1';
+  
+  try {
+    const response = await fetch(
+      `https://${DATACENTER}.api.mailchimp.com/3.0/lists/${AUDIENCE_ID}/members`,
+      {
+        method: 'POST',
+        headers: {
+          'Authorization': `apikey ${API_KEY}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          email_address: email,
+          first_name: firstname,
+          status: 'subscribed'
+        })
+      }
+    );
+    const data = await response.json();
+    if (response.ok || data.title === 'Member Exists') {
+      res.json({ success: true });
+    } else {
+      res.json({ success: false });
+    }
+  } catch (err) {
+    res.json({ success: false });
+  }
+});
