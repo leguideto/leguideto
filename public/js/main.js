@@ -232,7 +232,6 @@
           return;
         }
         fetch("/subscribe", { method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({email: email, firstname: first}) }).then(function(r){ return r.json(); }).then(function(data){ if(data.success){ form.reset(); if(status){ status.style.color = "#2a9d4a"; status.textContent = lang === "fr" ? "Merci " + first + " ! Tu es bien inscrit·e. ✅" : "Thanks " + first + "! You are subscribed. ✅"; } } else { if(status){ status.style.color = "var(--red)"; status.textContent = lang === "fr" ? "Une erreur est survenue. Réessaie." : "Something went wrong. Please try again."; } } }).catch(function(){});
-        }
       });
     });
   }
