@@ -12,14 +12,6 @@
   ],
   "routes": [
     {
-      "src": "/subscribe",
-      "dest": "/server.js"
-    },
-    {
-      "src": "/contact",
-      "dest": "/server.js"
-    },
-    {
       "src": "/css/(.*)",
       "dest": "/public/css/$1"
     },
@@ -36,6 +28,7 @@
       "dest": "/public/data/$1"
     },
     {
+      "methods": ["GET", "POST"],
       "src": "/(.*)",
       "dest": "/server.js"
     }
