@@ -190,8 +190,9 @@ img { max-width: 100%; }
 }
 .hero-banner img {
   width: 100%;
-  height: clamp(200px, 36vw, 460px);
-  object-fit: cover;
+  height: clamp(300px, 50vw, 600px);
+  object-fit: contain;
+  background: #000;
   display: block;
 }
 .media {
