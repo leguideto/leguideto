@@ -192,6 +192,7 @@ img { max-width: 100%; }
   width: 100%;
   height: clamp(300px, 45vw, 520px);
   object-fit: cover;
+  object-position: center 20%;
 
   display: block;
 }
