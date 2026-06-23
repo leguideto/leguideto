@@ -196,7 +196,7 @@
         '</div>' +
         '<div class="footer-bottom">' +
           '<span>© 2026 leGuideTO</span>' +
-          '<span data-fr="Fait avec ❤️ à Toronto" data-en="Made with ❤️ in Toronto">Fait avec ❤️ à Toronto</span>' +
+          '<span data-fr="© leGuideTO.ca — Tous droits réservés" data-en="© leGuideTO.ca — All rights reserved">© leGuideTO.ca — All rights reserved</span>' +
         '</div>' +
       '</div></div>';
   }
